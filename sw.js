@@ -1,17 +1,20 @@
-
-const CACHE = "ncode-manager-v1.2";
+const CACHE = "ncode-manager-v1.3";
 
 const FILES = [
+
     "./",
     "./index.html",
     "./style.css",
+    "./friendly.css",
     "./script.js",
+    "./friendly.js",
     "./animations.js",
     "./listino.js",
     "./storage.js",
     "./manifest.json",
     "./assets/icon-192.png",
     "./assets/icon-512.png"
+
 ];
 
 self.addEventListener("install", event => {
@@ -36,14 +39,12 @@ self.addEventListener("activate", event => {
 
             .then(keys => Promise.all(
 
-                keys
+                keys.filter(key =>
 
-                    .filter(key =>
-                        key.startsWith("ncode-manager-")
-                        && key !== CACHE
-                    )
+                    key.startsWith("ncode-manager-") &&
+                    key !== CACHE
 
-                    .map(key => caches.delete(key))
+                ).map(key => caches.delete(key))
 
             ))
 
@@ -59,9 +60,11 @@ self.addEventListener("fetch", event => {
     const url = new URL(request.url);
 
     if (
+
         request.method !== "GET" ||
         url.origin !== self.location.origin ||
         url.pathname.startsWith("/cdn-cgi/")
+
     ) {
         return;
     }
@@ -73,9 +76,11 @@ self.addEventListener("fetch", event => {
             .then(response => {
 
                 if (
+
                     response.ok &&
                     !response.redirected &&
                     response.type === "basic"
+
                 ) {
 
                     const copy = response.clone();
@@ -85,7 +90,9 @@ self.addEventListener("fetch", event => {
                         caches.open(CACHE)
 
                             .then(cache =>
+
                                 cache.put(request, copy)
+
                             )
 
                     );
@@ -107,8 +114,10 @@ self.addEventListener("fetch", event => {
                 if (request.mode === "navigate") {
 
                     return (
-                        await caches.match("./index.html")
-                        || Response.error()
+
+                        await caches.match("./index.html") ||
+                        Response.error()
+
                     );
 
                 }
