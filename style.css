@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font: 15px Inter, system-ui, sans-serif;
+    background: #f1f5f9;
+    color: #080b12;
+    --card: #fff;
+    --line: #dce3ed;
+    --muted: #64748b;
+    --field: #f8fafc
+}
+
+body.dark {
+    background: #111827;
+    color: #e5e7eb;
+    --card: #1f2937;
+    --line: #374151;
+    --muted: #aab6c8;
+    --field: #111827
+}
+
+aside {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 230px;
+    background: #080b12;
+    color: white;
+    padding: 25px 16px
+}
+
+h1 {
+    font-size: 32px;
+    margin: 0 12px 40px
+}
+
+h1 span {
+    color: #3975ff
+}
+
+h1 small {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #94a3b8
+}
+
+nav button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    color: #aab6c8;
+    margin: 5px 0
+}
+
+nav button.active {
+    background: #004cff;
+    color: white
+}
+
+main {
+    margin-left: 230px;
+    padding: 30px;
+    max-width: 1700px
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px
+}
+
+h2 {
+    margin: 5px 0;
+    font-size: 30px
+}
+
+h3 {
+    margin-top: 0
+}
+
+small,
+.muted {
+    color: var(--muted)
+}
+
+button {
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 15px;
+    background: #004cff;
+    color: white;
+    font: inherit;
+    cursor: pointer
+}
+
+button.secondary {
+    background: var(--field);
+    color: inherit;
+    border: 1px solid var(--line)
+}
+
+button.danger {
+    background: #b91c1c
+}
+
+input,
+select,
+textarea {
+    background: var(--field);
+    color: inherit;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 10px;
+    font: inherit;
+    min-width: 0;
+    width: 100%
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px
+}
+
+.panel {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 12px #00000006
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px
+}
+
+.metric strong {
+    display: block;
+    font-size: 28px;
+    color: #3975ff;
+    margin-top: 10px
+}
+
+.split {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(250px, 1fr);
+    gap: 18px
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 0
+}
+
+.row>* {
+    flex: 1
+}
+
+.row>button {
+    flex: 0 0 auto
+}
+
+.scroll {
+    overflow: auto
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 500px
+}
+
+td,
+th {
+    text-align: left;
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--line)
+}
+
+th {
+    font-size: 12px;
+    color: var(--muted)
+}
+
+.total {
+    font-size: 32px;
+    color: #3975ff;
+    font-weight: 750
+}
+
+.sticky {
+    align-self: start;
+    position: sticky;
+    top: 20px
+}
+
+#print {
+    display: none
+}
+
+textarea {
+    min-height: 90px
+}
+
+@media(max-width:800px) {
+    aside {
+        position: static;
+        width: auto;
+        padding: 12px
+    }
+
+    h1 {
+        margin: 0 0 12px;
+        font-size: 24px
+    }
+
+    nav {
+        display: flex;
+        overflow: auto;
+        gap: 5px
+    }
+
+    nav button {
+        white-space: nowrap;
+        width: auto
+    }
+
+    main {
+        margin: 0;
+        padding: 15px
+    }
+
+    .split {
+        grid-template-columns: 1fr
+    }
+
+    .sticky {
+        position: static
+    }
+}
+
+@media print {
+
+    aside,
+    main {
+        display: none
+    }
+
+    #print {
+        display: block;
+        color: #080b12;
+        background: white;
+        padding: 15px
+    }
+
+    body {
+        background: white
+    }
+
+    #print table {
+        min-width: 0
+    }
+
+    #print h1 {
+        margin: 0 0 20px
+    }
+
+    tr {
+        break-inside: avoid
+    }
+}

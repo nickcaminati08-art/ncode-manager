@@ -1,0 +1,23 @@
+{
+    "id": "./",
+    "name": "NCode Manager",
+    "short_name": "NCode",
+    "lang": "it",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#f1f5f9",
+    "theme_color": "#080b12",
+    "icons": [
+        {
+            "src": "assets/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/icon-192.png">
+    <link rel="stylesheet" href="style.css">
+    <title>NCode Manager</title>
+</head>
+
+<body>
+    <aside>
+        <h1>N<span>Code</span><small>MANAGER</small></h1>
+        <nav id="nav"></nav><button id="install" hidden>Installa app</button>
+    </aside>
+    <main>
+        <header>
+            <div><small>NCODE / WORKSPACE</small>
+                <h2 id="title"></h2>
+            </div><button onclick="theme()">◐ Tema</button>
+        </header>
+        <section id="view"></section>
+    </main>
+    <section id="print"></section>
+    <script src="listino.js"></script>
+    <script src="storage.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
