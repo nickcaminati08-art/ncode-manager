@@ -1,13 +1,16 @@
+
 {
     "id": "./",
     "name": "NCode Manager",
     "short_name": "NCode",
+    "description": "NCode Business Workspace",
     "lang": "it",
     "start_url": "./index.html",
     "scope": "./",
     "display": "standalone",
-    "background_color": "#f1f5f9",
-    "theme_color": "#080b12",
+    "orientation": "any",
+    "background_color": "#080d18",
+    "theme_color": "#080d18",
     "icons": [
         {
             "src": "assets/icon-192.png",

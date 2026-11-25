@@ -1,33 +1,118 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="it">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="#080b12">
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <meta name="theme-color" content="#080d18">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent">
+
+    <meta name="description"
+        content="NCode Manager - Business Workspace">
+
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="assets/icon-192.png">
+
+    <link rel="apple-touch-icon"
+        href="assets/icon-192.png">
+
     <link rel="stylesheet" href="style.css">
+
     <title>NCode Manager</title>
 </head>
 
 <body>
+
     <aside>
-        <h1>N<span>Code</span><small>MANAGER</small></h1>
-        <nav id="nav"></nav><button id="install" hidden>Installa app</button>
+
+        <div class="brand">
+            <h1>
+                N<span>Code</span>
+                <small>MANAGER</small>
+            </h1>
+
+            <div class="workspace-label">
+                BUSINESS WORKSPACE
+            </div>
+        </div>
+
+        <nav id="nav"
+            aria-label="Navigazione principale">
+        </nav>
+
+        <button id="install" hidden>
+            Installa app
+        </button>
+
+        <div class="sidebar-footer">
+
+            <div class="profile-avatar">
+                NC
+            </div>
+
+            <div>
+                <strong>NCode</strong>
+                <small>Private workspace</small>
+            </div>
+
+        </div>
+
     </aside>
+
     <main>
+
         <header>
-            <div><small>NCODE / WORKSPACE</small>
+
+            <div>
+                <small class="breadcrumb">
+                    NCODE / WORKSPACE
+                </small>
+
                 <h2 id="title"></h2>
-            </div><button onclick="theme()">◐ Tema</button>
+            </div>
+
+            <button class="theme-button"
+                onclick="theme()">
+
+                <svg width="20" height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8">
+
+                    <path d="M21 12.8A9 9 0 1 1 11.2 3
+                        7 7 0 0 0 21 12.8Z"/>
+
+                </svg>
+
+                <span>Tema</span>
+
+            </button>
+
         </header>
+
         <section id="view"></section>
+
+        <footer class="main-footer">
+            NCode Manager &bull; Versione 1.2
+        </footer>
+
     </main>
+
     <section id="print"></section>
+
     <script src="listino.js"></script>
     <script src="storage.js"></script>
     <script src="script.js"></script>
+    <script src="animations.js"></script>
+
 </body>
 
 </html>
